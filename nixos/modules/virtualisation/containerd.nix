@@ -37,7 +37,7 @@ in
         containerd
         runc
         iptables
-      ];
+      ] ++ lib.optional config.boot.zfs.enabled config.boot.zfs.package;
       serviceConfig = {
         ExecStart = ''${pkgs.containerd}/bin/containerd ${lib.concatStringsSep " " (lib.cli.toGNUCommandLine {} cfg.args)}'';
         Delegate = "yes";
