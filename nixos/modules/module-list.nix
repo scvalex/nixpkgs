@@ -172,6 +172,7 @@
   ./programs/msmtp.nix
   ./programs/mtr.nix
   ./programs/nano.nix
+  ./programs/nbd.nix
   ./programs/neovim.nix
   ./programs/nm-applet.nix
   ./programs/npm.nix
@@ -802,6 +803,7 @@
   ./services/networking/nar-serve.nix
   ./services/networking/nat.nix
   ./services/networking/nats.nix
+  ./services/networking/nbd.nix
   ./services/networking/ndppd.nix
   ./services/networking/nebula.nix
   ./services/networking/networkmanager.nix
