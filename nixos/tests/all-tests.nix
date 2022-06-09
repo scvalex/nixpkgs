@@ -245,6 +245,7 @@ in {
   iodine = handleTest ./iodine.nix {};
   ipfs = handleTest ./ipfs.nix {};
   ipv6 = handleTest ./ipv6.nix {};
+  ipvs = handleText ./ipvs.nix {};
   iscsi-multipath-root = handleTest ./iscsi-multipath-root.nix {};
   iscsi-root = handleTest ./iscsi-root.nix {};
   isso = handleTest ./isso.nix {};

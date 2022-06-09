@@ -814,6 +814,7 @@
   ./services/networking/inspircd.nix
   ./services/networking/iodine.nix
   ./services/networking/iperf3.nix
+  ./services/networking/ipvs.nix
   ./services/networking/ircd-hybrid/default.nix
   ./services/networking/iscsi/initiator.nix
   ./services/networking/iscsi/root-initiator.nix
