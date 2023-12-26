@@ -98,6 +98,7 @@ in
       };
       path = [ pkgs.bash ] ++ cfg.extraPackages;
       wantedBy = [ "default.target" ];
+      restartTriggers = [ cfg.environmentFile ];
     };
   };
 
