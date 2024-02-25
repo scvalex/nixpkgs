@@ -15,7 +15,6 @@ in
     package = mkOption {
       type = types.package;
       description = mdDoc "Livebook package to use.";
-      default = pkgs.livebook;
     };
 
     environmentFile = mkOption {
