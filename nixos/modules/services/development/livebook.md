@@ -38,7 +38,7 @@ user-readable location and set `environmentFile = /home/user/secure/livebook.env
 
 :::
 
-### Extra dependencies
+### Extra dependencies {#module-services-livebook-extra-deps}
 
 By default, the Livebook service is run with minimum dependencies, but
 some features require additional packages.  For example, the machine
