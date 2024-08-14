@@ -42,11 +42,11 @@
 
 stdenv.mkDerivation rec {
   pname = "labplot";
-  version = "2.11.1";
+  version = "2.10.1";
 
   src = fetchurl {
     url = "mirror://kde/stable/labplot/labplot-${version}.tar.xz";
-    sha256 = "sha256-U6pqyN85Mk2ZRj5g2I3iU0azko2luw8hCwVjSJBGZ50=";
+    sha256 = "sha256-K24YFRfPtuDf/3uJXz6yDHzjWeZzLThUXgdXya6i2u8=";
   };
 
   cmakeFlags = [
