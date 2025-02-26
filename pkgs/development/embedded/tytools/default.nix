@@ -5,28 +5,33 @@
   cmake,
   pkg-config,
   wrapQtAppsHook,
-  qtbase,
+  qt6,
 }:
 
 stdenv.mkDerivation rec {
   pname = "tytools";
-  version = "0.9.8";
+  version = "0.9.9";
 
   src = fetchFromGitHub {
     owner = "Koromix";
-    repo = pname;
-    rev = "v${version}";
-    sha256 = "sha256-MKhh0ooDZI1Ks8vVuPRiHhpOqStetGaAhE2ulvBstxA=";
+    repo = "rygel";
+    rev = "tytools/${version}";
+    sha256 = "sha256-nQZaNYOTkx79UC0RHencKIQFSYUnQ9resdmmWTmgQxA=";
   };
 
   nativeBuildInputs = [
-    cmake
     pkg-config
-    wrapQtAppsHook
+    qt6.wrapQtAppsHook
   ];
+
   buildInputs = [
-    qtbase
+    qt6.qtbase
   ];
+
+  buildPhase = ''
+    ./bootstrap.sh
+    ./felix tyuploader
+  '';
 
   meta = with lib; {
     description = "Collection of tools to manage Teensy boards";
