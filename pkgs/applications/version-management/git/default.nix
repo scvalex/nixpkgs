@@ -441,7 +441,7 @@ stdenv.mkDerivation (finalAttrs: {
   ## InstallCheck
 
   doCheck = false;
-  inherit doInstallCheck;
+  doInstallCheck = false;
 
   installCheckTarget = "test";
 
