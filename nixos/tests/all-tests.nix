@@ -800,6 +800,10 @@ in
   matrix-synapse-workers = handleTest ./matrix/synapse-workers.nix { };
   mautrix-meta-postgres = handleTest ./matrix/mautrix-meta-postgres.nix { };
   mautrix-meta-sqlite = handleTest ./matrix/mautrix-meta-sqlite.nix { };
+  matrix-synapse = runTest ./matrix/synapse.nix;
+  matrix-synapse-workers = runTest ./matrix/synapse-workers.nix;
+  matrix-tuwunel = runTest ./matrix/tuwunel.nix;
+  mautrix-discord = runTest ./matrix/mautrix-discord.nix;
   mattermost = handleTest ./mattermost { };
   mealie = handleTest ./mealie.nix { };
   mediamtx = handleTest ./mediamtx.nix { };
