@@ -19,6 +19,7 @@
   liburing,
   nixosTests,
   writeTextFile,
+  rustc-unwrapped,
 }:
 let
   rust-jemalloc-sys' = rust-jemalloc-sys.override {
@@ -103,6 +104,10 @@ rustPlatform.buildRustPackage (finalAttrs: {
     rustPlatform.bindgenHook
   ];
 
+  patches = [
+    ./dont-record-compilation-flags.patch
+  ];
+
   buildInputs = [
     bzip2
     zstd
@@ -171,6 +176,8 @@ rustPlatform.buildRustPackage (finalAttrs: {
       inherit (nixosTests) matrix-tuwunel;
     };
   };
+
+  disallowedReferences = [ rustc-unwrapped ];
 
   meta = {
     description = "Matrix homeserver written in Rust, official successor to conduwuit";
