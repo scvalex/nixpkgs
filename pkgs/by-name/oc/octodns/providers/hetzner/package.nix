@@ -3,6 +3,7 @@
   buildPythonPackage,
   fetchFromGitHub,
   octodns,
+  hcloud,
   pytestCheckHook,
   pythonOlder,
   requests,
@@ -12,7 +13,7 @@
 
 buildPythonPackage rec {
   pname = "octodns-hetzner";
-  version = "1.0.0";
+  version = "1.0.0-hcloud";
   pyproject = true;
 
   disabled = pythonOlder "3.9";
@@ -20,9 +21,14 @@ buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "octodns";
     repo = "octodns-hetzner";
-    tag = "v${version}";
-    hash = "sha256-JYVztSO38y4F+p0glgtT9/QRdt9uDnOziMFXxBikzLg=";
+    # tag = "v${version}";
+    rev = "3e994fc800ea8accd56a6087dd097f190bdfe8f4";
+    hash = "sha256-wFOn9IEom5YeZwn4PXbzOryB4LfqYq5ZQBXW4lADFs8=";
   };
+
+  propagatedBuildInputs = [
+    hcloud
+  ];
 
   build-system = [
     setuptools
@@ -31,9 +37,13 @@ buildPythonPackage rec {
   dependencies = [
     octodns
     requests
+    hcloud
   ];
 
-  pythonImportsCheck = [ "octodns_hetzner" ];
+  pythonImportsCheck = [
+    "octodns_hetzner"
+    "hcloud"
+  ];
 
   nativeCheckInputs = [
     pytestCheckHook
